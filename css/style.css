@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=New+Tegomin&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    background: url(../bg.jpg);
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#scoreBox {
+    position: absolute;
+    top: 15px;
+    right: 200px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: "New Tegomin", serif;
+
+}
+
+#highscoreBox {
+    position: absolute;
+    top: 65px;
+    right: 170px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: "New Tegomin", serif;
+
+}
+
+#board {
+    background: linear-gradient(rgb(74, 207, 74) , rgb(236, 236, 173));
+    width: 90vmin;
+    height: 92vmin;
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+
+}
+
+
+.head {
+    background: linear-gradient(rgb(233, 171, 171), rgb(242, 242, 169));
+    border: 2px solid purple;
+    border-radius: 5px;
+    transform: scale(1.02);
+    z-index: 2;
+}
+
+.snake {
+    background-color: purple;
+    border: .25vmin solid white;
+    border-radius:  12px;
+}
+
+.food {
+    background: linear-gradient(red, purple);
+    border: .25vmin solid black;
+    border-radius:  9px;
+}
+
+
+/* Pulse effect for food */
+.food {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
